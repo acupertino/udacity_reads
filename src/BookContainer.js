@@ -13,8 +13,6 @@ function EstadoLivro (c) {
   }
 } 
 
- 
-
 class BookContainer extends Component {
 render(){
 console.log('Props', this.props)
