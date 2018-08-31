@@ -1,6 +1,20 @@
 import React, {Component} from 'react';
 import './App.css';
 
+function EstadoLivro (c) {
+  if (c === 1){
+    return 1;
+  }
+  else if (c == "2"){
+    return 2;
+  }
+  else if (c == "3"){
+  return 3;
+  }
+} 
+
+ 
+
 class BookContainer extends Component {
 render(){
 console.log('Props', this.props)
@@ -19,7 +33,6 @@ return(
                             <div className="book">
                               <div className="book-top">
                                 <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: 'url(${livros_lendo.url}' }}></div>
-
                               </div>
                               <div className="book-title">{livros.name}</div>
                               <div className="book-authors">{livros.author}</div>
