@@ -4,8 +4,7 @@ import './App.css'
 
 class App extends React.Component {
   state = {
-    
-    livros_lendo ={ 
+    livros: [
       {
          "name": "To Kill a Mockingbird",
          "author": "Harper Lee",
@@ -15,23 +14,18 @@ class App extends React.Component {
          "name": "Ender's Game",
          "author": "Orson Scott Cardh",
          "url": "http://books.google.com/books/content?id=yDtCuFHXbAYC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE72RRiTR6U5OUg3IY_LpHTL2NztVWAuZYNFE8dUuC0VlYabeyegLzpAnDPeWxE6RHi0C2ehrR9Gv20LH2dtjpbcUcs8YnH5VCCAH0Y2ICaKOTvrZTCObQbsfp4UbDqQyGISCZfGN&source=gbs_api"
-       }
-      }
-    }
-     livros_quero:[
+       },
+
       {
          "name": "1776",
          "author": "David McCullough",
          "url": "http://books.google.com/books/content?id=uu1mC6zWNTwC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE73pGHfBNSsJG9Y8kRBpmLUft9O4BfItHioHolWNKOdLavw-SLcXADy3CPAfJ0_qMb18RmCa7Ds1cTdpM3dxAGJs8zfCfm8c6ggBIjzKT7XR5FIB53HHOhnsT7a0Cc-PpneWq9zX&source=gbs_api"
-       },
-        {
+      },
+      {
          "name": "Harry Potter and the Sorcerer's Stone",
          "author": "J.K. Rowling",
          "url": "http://books.google.com/books/content?id=wrOQLV6xB-wC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE72G3gA5A-Ka8XjOZGDFLAoUeMQBqZ9y-LCspZ2dzJTugcOcJ4C7FP0tDA8s1h9f480ISXuvYhA_ZpdvRArUL-mZyD4WW7CHyEqHYq9D3kGnrZCNiqxSRhry8TiFDCMWP61ujflB&source=gbs_api"
-       }
-     ]
-    }      
-     livros_lido: [
+       },
        {
          "name": "The Hobbit",
          "author": "J.R.R. Tolkien",
@@ -47,33 +41,14 @@ class App extends React.Component {
         "author": "Mark Twain",
         "url": "http://books.google.com/books/content?id=32haAAAAMAAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE72yckZ5f5bDFVIf7BGPbjA0KYYtlQ__nWB-hI_YZmZ-fScYwFy4O_fWOcPwf-pgv3pPQNJP_sT5J_xOUciD8WaKmevh1rUR-1jk7g1aCD_KeJaOpjVu0cm_11BBIUXdxbFkVMdi&source=gbs_api"
       }
-     ]
-    }
-
-
-    removeBookLendo = (livros_lendo) => {
-      this.setState(( state ) => ({
-        livros_lendo: state.livros_lendo.filter ((c) => c.name !== livros_lendo.name)
-       }))
-    }
-    removeBookQuero = (livros_quero) => {
-      this.setState(( state ) => ({
-        livros_quero: state.livros_quero.filter ((b) => b.name !== livros_quero.name)
-       }))
-    }
-    removeBookLido = (livros_lido) => {
-      this.setState(( state ) => ({
-        livros_lido: state.livros_lido.filter ((d) => d.name !== livros_lido.name)
-       }))
-    }
+    ]
+  }
+  
 
   render() {  
     return (
       <div>
-        <BookContainer livros_lendo = {this.state.livros_lendo}
-                       livros_quero = {this.state1.livros_quero}
-                       livros_lido = {this.state2.livros_lido}
-                       removeBookLendo = {this.removeBookLendo}/>
+        <BookContainer livros = {this.state.livros}/>
       </div>
   )
       }

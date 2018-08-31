@@ -14,16 +14,15 @@ return(
                   <h2 className="bookshelf-title">Currently Reading</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
-                      {this.props.livros_lendo.map((livros_lendo) => (
+                      {this.props.livros.map((livros) => (
                         <li>
                             <div className="book">
                               <div className="book-top">
                                 <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: 'url(${livros_lendo.url}' }}></div>
-                                    <div className="book-shelf-changer" onClick ={() => this.props.removeBookLendo(livros_lendo)}>                                        
-                                    </div>
+
                               </div>
-                              <div className="book-title">{livros_lendo.name}</div>
-                              <div className="book-authors">{livros_lendo.author}</div>
+                              <div className="book-title">{livros.name}</div>
+                              <div className="book-authors">{livros.author}</div>
                             </div>
                         </li>
                       ))}
@@ -33,20 +32,20 @@ return(
 
 
 
+
                 <div className="bookshelf">
                   <h2 className="bookshelf-title">Want to Read</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
-                      {this.props.livros_quero.map((livros_quero) => (
+                      {this.props.livros.map((livros) => (
                         <li>
                             <div className="book">
                               <div className="book-top">
                                 <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: 'url(${livros.quero.url})' }}></div>
-                                    <div className="book-shelf-changer" onClick ={() => this.props.removeBookQuero(livros_quero)}>                                        
-                                    </div>
+                                    
                               </div>
-                              <div className="book-title">{livros_quero.name}</div>
-                              <div className="book-authors">{livros_quero.author}</div>
+                              <div className="book-title">{livros.name}</div>
+                              <div className="book-authors">{livros.author}</div>
                             </div>
                         </li>
                       ))}
@@ -59,16 +58,15 @@ return(
                   <h2 className="bookshelf-title">Want to Read</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
-                      {this.props.livros_lido.map((livros_lido) => (
+                      {this.props.livros.map((livros) => (
                         <li>
                             <div className="book">
                               <div className="book-top">
                                 <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: 'url(${livros_lido.url}' }}></div>
-                                    <div className="book-shelf-changer" onClick ={() => this.props.removeBookLido(livros_lido)}>                                        
-                                    </div>
+                                   
                               </div>
-                              <div className="book-title">{livros_lido.name}</div>
-                              <div className="book-authors">{livros_lido.author}</div>
+                              <div className="book-title">{livros.name}</div>
+                              <div className="book-authors">{livros.author}</div>
                             </div>
                         </li>
                       ))}
