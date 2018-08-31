@@ -1,0 +1,10 @@
+    removeBook = (livros_lendo) => {
+      this.setState(( state ) => ({
+        livros_lendo: state.livros_lendo.filter ((c) => c.name !== livros_lendo.name)
+       }))
+    }
+
+
+
+ <div className="book-shelf-changer" onClick ={() => this.props.removeBookLendo(livros_lendo)}>                                        
+                                    </div>
