@@ -3,10 +3,9 @@ import BookContainer from './BookContainer'
 import './App.css'
 
 class App extends React.Component {
-  state = {
-    livros: [
+  state = [
       {
-         "name": "To Kill a Mockingbirddd",
+         "name": "To Kill a Mockingbird",
          "author": "Harper Lee",
          "url": "http://books.google.com/books/content?id=PGR2AwAAQBAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE73-GnPVEyb7MOCxDzOYF1PTQRuf6nCss9LMNOSWBpxBrz8Pm2_mFtWMMg_Y1dx92HT7cUoQBeSWjs3oEztBVhUeDFQX6-tWlWz1-feexS0mlJPjotcwFqAg6hBYDXuK_bkyHD-y&source=gbs_api",
          "id":"1"
@@ -49,16 +48,20 @@ class App extends React.Component {
         "id":"3"
       }
     ]
-  }
   
-
   render() {  
+    const array = this.state;
+    var filtro1 = array.filter(function(obj) { return obj.id == 1; }); 
+    var filtro2 = array.filter(function(obj) { return obj.id == 2; }); 
+    var filtro3 = array.filter(function(obj) { return obj.id == 3; }); 
     return (
       <div>
-        <BookContainer livros = {this.state.livros}/>
+        <BookContainer filtrado1 = {filtro1}
+                       filtrado2 = {filtro2}
+                       filtrado3 = {filtro3}/>
       </div>
   )
-      }
-      }
+ }
+}
 
 export default App
