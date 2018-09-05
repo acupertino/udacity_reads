@@ -19,7 +19,7 @@ return(
                         <li>
                             <div className="book">
                               <div className="book-top">
-                                <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: 'url(${livros_lendo.url}' }}></div>
+                                <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: "url(${a.url})" }}></div>
                             
                               </div>
                               <div className="book-title">{a.name}</div>
