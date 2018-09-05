@@ -58,7 +58,8 @@ class App extends React.Component {
       <div>
         <BookContainer filtrado1 = {filtro1}
                        filtrado2 = {filtro2}
-                       filtrado3 = {filtro3}/>
+                       filtrado3 = {filtro3}
+                       teste = {filtro1[0].url}/>
       </div>
   )
  }
