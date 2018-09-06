@@ -48,8 +48,17 @@ class App extends React.Component {
         "id":"3"
       }
     ]
+  }
+    
+
+    this.setState(state, x) {
+      state[0].id == "1";
+    }
+   
   
-  render() {  
+  render() {
+      
+    })  
     const array = this.state;
     var filtro1 = array.filter(function(obj) { return obj.id == 1; }); 
     var filtro2 = array.filter(function(obj) { return obj.id == 2; }); 
