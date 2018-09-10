@@ -1,6 +1,8 @@
 import React from 'react'
 import BookContainer from './BookContainer'
 import './App.css'
+import BooksAPI, { getAll } from './BooksAPI'
+
 
 class App extends React.Component {
   state = [
@@ -59,15 +61,14 @@ class App extends React.Component {
   }
 
   render() {
-
-
+    const x = BooksAPI.getAll;
     const array = this.state;
     var filtro1 = array.filter(function (obj) { return obj.id == 1; });
     var filtro2 = array.filter(function (obj) { return obj.id == 2; });
     var filtro3 = array.filter(function (obj) { return obj.id == 3; });
     return (
       <div>
-        <h1><button onClick={getAll()}>TESTE</button></h1>
+        {x}
         <BookContainer filtrado1={filtro1}
           filtrado2={filtro2}
           filtrado3={filtro3} />
