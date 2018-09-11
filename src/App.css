@@ -144,11 +144,11 @@ body, .app {
   position: absolute;
   right: 0;
   bottom: -10px;
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: #b93e3e;
-  background-image: url('http://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/512/delete-1-icon.png');
+  background: #60ac5d;
+  background-image: url('./icons/arrow-drop-down.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px;
