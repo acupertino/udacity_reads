@@ -7,12 +7,12 @@ class ButtonChange extends React.Component {
         var shelf = this.props.opcao;
         return (
             <div>
-                <select>
+                <select defaultValue = {this.props.opcao}>
                     <option value="move" disabled>Move to...</option>
                     <option value="currentlyReading">Currently Reading</option>
                     <option value="wantToRead">Want to Read</option>
                     <option value="read">Read</option>
-                    <option value="none">{shelf}</option>
+                    <option value="none">None</option>
                 </select>
             </div>
         )
