@@ -14,17 +14,11 @@ class App extends React.Component {
       this.setState({ dados: books })
     })
   }
-    
-  
-  changeShelf(x) {
-    console.log('OI');
-  }
 
   render() {
 
     return (
-      <BookContainer dados={this.state.dados}
-        changeShelf={this.changeShelf} />
+      <BookContainer dados={this.state.dados}/>
     )
   }
 }

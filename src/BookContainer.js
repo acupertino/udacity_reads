@@ -23,8 +23,8 @@ class BookContainer extends Component {
                         <div className="book-top">
                           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }} />
                           <div className="book-shelf-changer">                          
-                            <ButtonChange opcao = {book.shelf}
-                                          change = {this.props.changeShelf}/>
+                            <ButtonChange shelf = {book.shelf}
+                                          infolivro = {book}/>
                           </div>
                         </div>
                         <div className="book-title">{book.title}</div>
@@ -47,7 +47,8 @@ class BookContainer extends Component {
                         <div className="book-top">
                           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }} />
                           <div className="book-shelf-changer">
-                            <ButtonChange opcao = {book.shelf}/>
+                            <ButtonChange shelf = {book.shelf}
+                                          infolivro = {book}/>
                           </div>
                         </div>
                         <div className="book-title">{book.title}</div>
@@ -71,7 +72,8 @@ class BookContainer extends Component {
                         <div className="book-top">
                           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }} />
                           <div className="book-shelf-changer">
-                            <ButtonChange opcao = {book.shelf}/>
+                            <ButtonChange shelf = {book.shelf}
+                                          infolivro = {book}/>
                           </div>
                         </div>
                         <div className="book-title">{book.title}</div>
