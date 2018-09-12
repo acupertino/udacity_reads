@@ -6,7 +6,7 @@ class ButtonChange extends React.Component {
     render() {
         return (
             <div>
-                <select value = {this.props.opcao} onChange = {}>
+                <select defaultValue = {this.props.opcao} onChange = {this.props.change}>
                     <option value="move" disabled>Move to...</option>
                     <option value="currentlyReading">Currently Reading</option>
                     <option value="wantToRead">Want to Read</option>

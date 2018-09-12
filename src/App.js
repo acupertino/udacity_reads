@@ -14,9 +14,10 @@ class App extends React.Component {
       this.setState({ dados: books })
     })
   }
-
+    
+  
   changeShelf(x) {
-    console.log(this.refs.selected.value);
+    console.log('OI');
   }
 
   render() {
