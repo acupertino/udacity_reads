@@ -4,10 +4,9 @@ import './App.css';
 class ButtonChange extends React.Component {
 
     render() {
-        var shelf = this.props.opcao;
         return (
             <div>
-                <select defaultValue = {this.props.opcao}>
+                <select value = {this.props.opcao} onChange = {}>
                     <option value="move" disabled>Move to...</option>
                     <option value="currentlyReading">Currently Reading</option>
                     <option value="wantToRead">Want to Read</option>

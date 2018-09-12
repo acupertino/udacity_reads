@@ -23,7 +23,8 @@ class BookContainer extends Component {
                         <div className="book-top">
                           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }} />
                           <div className="book-shelf-changer">                          
-                            <ButtonChange opcao = {book.shelf}/>
+                            <ButtonChange opcao = {book.shelf}
+                                          change = {this.props.changeShelf}/>
                           </div>
                         </div>
                         <div className="book-title">{book.title}</div>
