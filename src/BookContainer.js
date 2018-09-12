@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 
-
-
-
 class BookContainer extends Component {
+  
+
   render() {
     console.log('Props', this.props)
     return (
@@ -18,23 +17,24 @@ class BookContainer extends Component {
               <div className="bookshelf-books">
                 <ol className="books-grid">
                   {this.props.dados.filter(book => book.shelf === 'currentlyReading').map(book => (
-                    <li>
+                    <li key={book.id}>
                       <div className="book">
                         <div className="book-top">
-                          <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})`}}/>
+                          <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }} />
                           <div className="book-shelf-changer">
-                              <select ref="selected" onChange = {(e) => {this.}}>
-                                <option value="move" disabled>Move to...</option>
-                                <option value="currentlyReading" selected = "true">Currently Reading</option>
-                                <option value="wantToRead">Want to Read</option>
-                                <option value="read">Read</option>
-                                <option value="none">None</option>
-                              </select>
-                            </div>
+                          
+                            <select>
+
+                              <option value="move" disabled>Move to...</option>
+                              <option value="currentlyReading">Currently Reading</option>
+                              <option value="wantToRead">Want to Read</option>
+                              <option value="read">Read</option>
+                              <option value="none">None</option>
+                            </select>
+                          </div>
                         </div>
                         <div className="book-title">{book.title}</div>
                         <div className="book-authors">{book.authors}</div>
-                        
                       </div>
                     </li>
                   ))}
@@ -50,23 +50,23 @@ class BookContainer extends Component {
               <div className="bookshelf-books">
                 <ol className="books-grid">
                   {this.props.dados.filter(book => book.shelf === 'wantToRead').map(book => (
-                    <li>
+                    <li key={book.id}>
                       <div className="book">
                         <div className="book-top">
-                          <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})`}}/>
+                          <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }} />
                           <div className="book-shelf-changer">
-                          <select>
+                            <select> 
                                 <option value="move" disabled>Move to...</option>
-                                <option value="currentlyReading" >Currently Reading</option>
-                                <option value="wantToRead" selected = "true">Want to Read</option>
-                                <option value="read">Read</option>
-                                <option value="none">None</option>
-                              </select>
-                            </div>
+                              <option value="currentlyReading" >Currently Reading</option>
+                              <option value="wantToRead">Want to Read</option>
+                              <option value="read">Read</option>
+                              <option value="none">None</option>
+                            </select>
+                          </div>
                         </div>
                         <div className="book-title">{book.title}</div>
                         <div className="book-authors">{book.authors}</div>
-                        
+
                       </div>
                     </li>
                   ))}
@@ -80,23 +80,23 @@ class BookContainer extends Component {
               <div className="bookshelf-books">
                 <ol className="books-grid">
                   {this.props.dados.filter(book => book.shelf === 'read').map(book => (
-                    <li>
+                    <li key={book.id}>
                       <div className="book">
                         <div className="book-top">
-                          <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})`}}/>
+                          <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }} />
                           <div className="book-shelf-changer">
-                          <select >
-                                <option value="move" disabled>Move to...</option>
-                                <option value="currentlyReading" >Currently Reading</option>
-                                <option value="wantToRead" >Want to Read</option>
-                                <option value="read" selected = "true">Read</option>
-                                <option value="none">None</option>
-                              </select>
-                            </div>
+                            <select >
+                              <option value="move" disabled>Move to...</option>
+                              <option value="currentlyReading">Currently Reading</option>
+                              <option value="wantToRead">Want to Read</option>
+                              <option value="read">Read</option>
+                              <option value="none">None</option>
+                            </select>
+                          </div>
                         </div>
                         <div className="book-title">{book.title}</div>
                         <div className="book-authors">{book.authors}</div>
-                        
+
                       </div>
                     </li>
                   ))}

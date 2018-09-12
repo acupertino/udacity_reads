@@ -15,15 +15,15 @@ class App extends React.Component {
     })
   }
 
-  onChange(x){
-    console.log(x)
+  changeShelf(x) {
+    console.log(this.refs.selected.value);
   }
 
   render() {
 
     return (
-      <BookContainer dados = {this.state.dados}
-                     chageShelf = {this.onChange}/>
+      <BookContainer dados={this.state.dados}
+        changeShelf={this.changeShelf} />
     )
   }
 }
