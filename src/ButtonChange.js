@@ -13,8 +13,6 @@ class ButtonChange extends React.Component {
         BooksAPI.update(this.props.infoLivro, newShelf)
       }
     
-
-
     render() {
         console.log(this.props)
         return(
