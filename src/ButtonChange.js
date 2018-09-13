@@ -1,33 +1,32 @@
 import React from 'react';
 import './App.css';
+import * as BooksAPI from './BooksAPI'
 
-
-class ButtonChange extends React.Component {
-    
+class ButtonChange extends React.Component {    
     constructor(props) {
         super(props);
-        this.state = {};
-        this.handleChange = this.handleChange.bind(this);
+        this.change = this.change.bind(this);
     }
+
+    change(event)  {
+        var newShelf = event.target.value;
+        BooksAPI.update(this.props.infoLivro, newShelf)
+      }
     
-    handleChange(event) {
-        this.setState({newShelf: event.target.value});
-    }
+
+
     render() {
-        console.log('Props', this.props)
+        console.log(this.props)
         return(
             <div>                
-            <select defaultValue={this.props.shelf} onChange = {this.handleChange}>
+            <select defaultValue={this.props.shelf} onChange = {this.change}>
                 <option value="move" disabled>Move to...</option>
                 <option value="currentlyReading">Currently Reading</option>
                 <option value="wantToRead">Want to Read</option>
                 <option value="read">Read</option>
                 <option value="none">None</option>
             </select>
-            {console.log(this.state)}
         </div>
-        
-              
         )
     }
 }
