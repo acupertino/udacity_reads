@@ -9,8 +9,7 @@ class ButtonChange extends React.Component {
         change(event) {
             this.props.changeBook(this.props.infoLivro, event.target.value)
         }    
-    render() {
-        
+    render() {        
         console.log(this.props)
         return(
             <div>                

@@ -8,16 +8,12 @@ class BookContainer extends Component {
   render() {
     console.log('Props', this.props)
     return (
-      <div>
-      {this.props.screen === 'AddBook' && (
-        <Link to="/AddBook" className="open-search a">ADD</Link>
-      )}
       <div className="list-books">
         <div className="list-books-title"><h1>MyReads</h1></div>
         <div className="list-books-content">
           <div>
             <div className="bookshelf">
-              <h2 className="bookshelf-title">Currently Reading </h2>
+              <h2 className="bookshelf-title">Currently Reading</h2>
               <div className="bookshelf-books">
                 <ol className="books-grid">
                   {this.props.dados.filter(book => book.shelf === 'currentlyReading').map(book => (
@@ -92,16 +88,13 @@ class BookContainer extends Component {
             </div>
           </div>
         </div>
-      </div>
-        
-        </div>
-            
+        <Link className="open-search a" to ="/AddBooks"> add </Link>
 
-        
-    );
+      </div>
+    )
   }
 }
-
+    
 export default BookContainer
 
 
