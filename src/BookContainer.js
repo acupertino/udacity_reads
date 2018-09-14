@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ButtonChange from './ButtonChange';
 import './App.css';
 import { Link } from 'react-router-dom'
-import AddBook from './AddBook';
 
 class BookContainer extends Component {
   render() {
@@ -87,16 +86,15 @@ class BookContainer extends Component {
               </div>
             </div>
           </div>
+        </div>        
+        <div className="open-search a">
+          <Link to="/AddBooks"> add </Link>
         </div>
-        <div className = "open-search a">
-        <Link to ="/AddBooks"> add </Link>
-        </div>
-
       </div>
     )
   }
 }
-    
+
 export default BookContainer
 
 
