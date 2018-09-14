@@ -1,18 +1,14 @@
 import React from 'react';
 import './App.css';
-import * as BooksAPI from './BooksAPI'
 
 class ButtonChange extends React.Component {    
     constructor(props) {
         super(props);
         this.change = this.change.bind(this);
-    }
-
-    change(event)  {
-        var newShelf = event.target.value;
-        BooksAPI.update(this.props.infoLivro, newShelf)
-      }
-    
+    }        
+        change(event) {
+            this.props.changeBook(this.props.infoLivro, event.target.value)
+        }    
     render() {
         console.log(this.props)
         return(
@@ -28,7 +24,6 @@ class ButtonChange extends React.Component {
         )
     }
 }
-
 export default ButtonChange
 
 

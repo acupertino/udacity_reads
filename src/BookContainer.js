@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
 import ButtonChange from './ButtonChange';
 import './App.css';
+import { Link } from 'react-router-dom'
+import AddBook from './AddBook';
 
 class BookContainer extends Component {
-  
+   state = { 
+     screen : 'main'
+   }
+
 
   render() {
     console.log('Props', this.props)
     return (
-      
+      <div>
+      {this.props.screen === 'AddBook' && (
+        <Link to="/AddBook" className="open-search a">ADD</Link>
+      )}
       <div className="list-books">
         <div className="list-books-title"><h1>MyReads</h1></div>
         <div className="list-books-content">
@@ -22,9 +30,10 @@ class BookContainer extends Component {
                       <div className="book">
                         <div className="book-top">
                           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }} />
-                          <div className="book-shelf-changer">                          
-                            <ButtonChange shelf = {book.shelf}
-                                          infoLivro = {book}/>
+                          <div className="book-shelf-changer">
+                            <ButtonChange shelf={book.shelf}
+                              infoLivro={book}
+                              changeBook={this.props.changeBook} />
                           </div>
                         </div>
                         <div className="book-title">{book.title}</div>
@@ -47,8 +56,9 @@ class BookContainer extends Component {
                         <div className="book-top">
                           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }} />
                           <div className="book-shelf-changer">
-                          <ButtonChange shelf = {book.shelf}
-                                          infoLivro = {book}/>
+                            <ButtonChange shelf={book.shelf}
+                              infoLivro={book}
+                              changeBook={this.props.changeBook} />
                           </div>
                         </div>
                         <div className="book-title">{book.title}</div>
@@ -71,12 +81,14 @@ class BookContainer extends Component {
                         <div className="book-top">
                           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }} />
                           <div className="book-shelf-changer">
-                          <ButtonChange shelf = {book.shelf}
-                                          infoLivro = {book}/>
+                            <ButtonChange shelf={book.shelf}
+                              infoLivro={book}
+                              changeBook={this.props.changeBook} />
                           </div>
                         </div>
                         <div className="book-title">{book.title}</div>
-                        <div className="book-authors">{book.authors}</div>
+                        <div className="book-authors">{book.authors}
+                        </div>
                       </div>
                     </li>
                   ))}
@@ -86,6 +98,11 @@ class BookContainer extends Component {
           </div>
         </div>
       </div>
+        
+        </div>
+            
+
+        
     );
   }
 }
