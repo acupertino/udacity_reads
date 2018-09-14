@@ -23,11 +23,11 @@ class App extends React.Component {
     }
     return (
       <div>
-        {this.state.screen === 'main' && (
+        
           <BookContainer dados={this.state.dados}
             changeBook={changeBook} />
-        )}
-        }
+
+    
       </div>
     )
   }

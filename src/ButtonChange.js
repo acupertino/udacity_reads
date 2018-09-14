@@ -10,6 +10,7 @@ class ButtonChange extends React.Component {
             this.props.changeBook(this.props.infoLivro, event.target.value)
         }    
     render() {
+        
         console.log(this.props)
         return(
             <div>                

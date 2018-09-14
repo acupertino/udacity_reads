@@ -5,11 +5,6 @@ import { Link } from 'react-router-dom'
 import AddBook from './AddBook';
 
 class BookContainer extends Component {
-   state = { 
-     screen : 'main'
-   }
-
-
   render() {
     console.log('Props', this.props)
     return (
