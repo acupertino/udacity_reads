@@ -88,7 +88,9 @@ class BookContainer extends Component {
             </div>
           </div>
         </div>
-        <Link className="open-search a" to ="/AddBooks"> add </Link>
+        <div className = "open-search a">
+        <Link to ="/AddBooks"> add </Link>
+        </div>
 
       </div>
     )
