@@ -6,19 +6,12 @@ class AddBook extends React.Component {
     render() {
         console.log(this.props)
         return (
-            <div >
-                
-                
-                
-                <Link className="close-search" to="/"></Link>
-                <input className="search-books-bar input">
-                   
-                                    
-          
-    
-              </input>
-                        
-            </div>
+            <div className="search-books-bar">
+                <div className="search-books-bar">
+                    <div><Link to="/" className="close-search"></Link></div>
+                    <input type="text" placeholder="Search by title or author"></input>
+                </div>
+            </div>            
         )
     }
 }
