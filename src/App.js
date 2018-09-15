@@ -14,26 +14,26 @@ class App extends React.Component {
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
       this.setState({ dados: books })
-
     })
   }
 
-  navigateToAdd = () => {
-    this.setState({ screen: 'addbook' })
+
+  changeBook = (book, newShelf) => {
+    BooksAPI.get(book.id).then((books) => {
+      console.log(books.shelf)
+    })
+    BooksAPI.getAll().then((books) => {
+      console.log(books)
+    })
+
   }
 
   render() {
-    const changeBook = (book, newS) => {
-      BooksAPI.update(book, newS)
-    }
-
-    
     return (
       <div>
         <Route exact path="/" render={() => (
           <BookContainer dados={this.state.dados}
-            changeBook={changeBook}
-            onNavigate={this.navigateToAdd}/>
+            changeBook={this.changeBook} />
         )} />
         <Route path="/AddBooks" component={AddBook} />
       </div>
