@@ -19,15 +19,19 @@ class App extends React.Component {
 
 
   changeBook = (book, newShelf) => {
-    BooksAPI.get(book.id).then((books) => {
-      console.log(books.shelf)
-    })
-    BooksAPI.getAll().then((books) => {
-      console.log(books)
-    })
+    var i=0, j;
+    {for (i=0;i<this.state.dados.length;i++){
+      this.state.dados[i].id === book.id && ((this.state.dados[i].shelf = newShelf), (j = i))
+    }
 
+    BooksAPI.update(book, newShelf).then(book => {
+      this.setState(state => ({
+        book : state.dados.concat([ book ])
+      }))
+    })
   }
-
+}
+  
   render() {
     return (
       <div>
