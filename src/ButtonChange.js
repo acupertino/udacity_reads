@@ -5,7 +5,7 @@ class ButtonChange extends React.Component {
     constructor(props) {
         super(props);
         this.change = this.change.bind(this);
-    }        
+        }            
         change(event) {
             this.props.changeBook(this.props.infoLivro, event.target.value)
         }    

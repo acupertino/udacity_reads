@@ -88,7 +88,7 @@ class BookContainer extends Component {
           </div>
         </div>        
         <div className="open-search a">
-          <Link to="/AddBooks"> add </Link>
+          <Link to="/AddBooks" dados ={this.props.dados}> </Link>
         </div>
       </div>
     )
