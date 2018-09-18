@@ -8,8 +8,8 @@ import AddBook from './AddBook';
 
 
 class App extends React.Component {
-  state = {
-    dados: []
+  state = { 
+      dados : []
   }
 
   componentDidMount() {
@@ -36,10 +36,11 @@ class App extends React.Component {
       <div>
         <Route exact path="/" render={() => (
           <BookContainer dados={this.state.dados}
-            changeBook={this.changeBook} />
+                         changeBook={this.changeBook} />
         )} />
         <Route path="/AddBooks" render={() => (
-          <AddBook dados={this.state.dados} />
+          <AddBook dados={this.state.dados}
+                   changeBook={this.changeBook} />
         )} />
       </div>
 
