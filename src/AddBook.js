@@ -16,10 +16,10 @@ class AddBook extends React.Component {
 
     updateQuery = (query) => {
         console.log(query)
-        const match = new RegExp(escapeRegExp(query), 'i') //ajuste da string
-        console.log(match)
-        this.setState({ query: query.trim() })
-        //console.log(this.state.query)
+        const x = query
+        console.log(this.state.query)
+        this.setState({ query : x })
+        console.log(this.state.query)
         //BooksAPI.search(this.state.query).then((result) => {
            // this.setState({ data: result })
         //})
@@ -27,7 +27,6 @@ class AddBook extends React.Component {
     render() {
         return (
             <div>
-                {console.log(this.state.data)}
                 <div className="search-books-bar">
                     <div><Link to="/" className="close-search"></Link></div>
                     <input
