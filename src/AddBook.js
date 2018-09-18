@@ -10,23 +10,20 @@ import * as BooksAPI from './BooksAPI'
 
 class AddBook extends React.Component {
     state = {
-        query: '',
+        query: '  ',
         data: []
     }
 
     updateQuery = (query) => {
         console.log(query)
-        const match = new RegExp(escapeRegExp(query), 'i') //ajuste da string
-        console.log(match)
-        this.setState({ query: query.trim() })
-<<<<<<< HEAD
+        this.setState({ query })
         console.log(this.state.query)
-=======
-        //console.log(this.state.query)
+
+
         //BooksAPI.search(this.state.query).then((result) => {
            // this.setState({ data: result })
         //})
->>>>>>> parent of ca726c5... Revert "quase"
+        
     }
     render() {
         return (
