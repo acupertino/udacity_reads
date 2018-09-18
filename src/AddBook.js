@@ -12,6 +12,7 @@ class AddBook extends React.Component {
     }
     updateQuery = (query) => {
         this.setState({ query: query.trim() })
+        console.log(this.state.query)
     }
     render() {
         let showingBooks
