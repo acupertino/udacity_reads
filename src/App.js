@@ -5,12 +5,11 @@ import { Route } from 'react-router-dom'
 import * as BooksAPI from './BooksAPI'
 import AddBook from './AddBook';
 
-
-
 class App extends React.Component {
-  state = { 
+    state = { 
       dados : []
   }
+
 
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
