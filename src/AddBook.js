@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import escapeRegExp from 'escape-string-regexp'
 import './App.css';
-import ButtonChange from './ButtonChange'
-import sortBy from 'sort-by'
 import * as BooksAPI from './BooksAPI'
 
 var str = ""
