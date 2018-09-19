@@ -10,7 +10,14 @@ class ButtonChange extends React.Component {
     }            
     change(event) {
         this.props.changeBook(this.props.infoLivro, event.target.value)
-    }    
+    }   
+    
+    funcaoShelf = (book) => {
+        if (book.shelf == null) {
+            var x = "none"
+            return x
+        }
+    }
 
 
     render() {        
