@@ -2,13 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import './App.css';
 import * as BooksAPI from './BooksAPI'
+import ButtonChange from './ButtonChange'
 
 var str = ""
-class AddBook extends React.Component {    
-        state = {
-            data: []
-        }
-           
+class AddBook extends React.Component {
+    state = {
+        data: []
+    }
+
     updateQuery = (query) => {
         str = query
         console.log(str)
@@ -26,7 +27,7 @@ class AddBook extends React.Component {
     }
 
     funcaoShelf = (book) => {
-        if(book.shelf == null){
+        if (book.shelf == null) {
 
             var x = "none"
             return x
@@ -57,14 +58,9 @@ class AddBook extends React.Component {
                                                 <div className="book">
                                                     <div className="book-top">
                                                         <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }} />
-                                                        <div className="book-shelf-changer">                                            
-                                                                <select defaultValue={this.funcaoShelf(book)}>
-                                                                <option value="move" disabled>Move to...</option>
-                                                                <option value="currentlyReading">Currently Reading</option>
-                                                                <option value="wantToRead">Want to Read</option>
-                                                                <option value="read">Read</option>
-                                                                <option value="none">None</option>
-                                                            </select>
+                                                        <div className="book-shelf-changer">
+                                                            <ButtonChange shelf={book.shelf}
+                                                                infoLivro={book}/>
                                                         </div>
                                                     </div>
                                                     <div className="book-title">{book.title}</div>
