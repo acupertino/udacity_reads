@@ -15,6 +15,7 @@ class AddBook extends React.Component {
     updateQuery = (query) => {
         str = query
         console.log(str)
+<<<<<<< HEAD
         BooksAPI.search(str).then((result) => {
             if (result.error === "empty query") {
                 this.setState({ data: [] })
@@ -28,6 +29,19 @@ class AddBook extends React.Component {
         if(book.shelf == null){
             var x = "none"
             return x
+=======
+        if (str != "") {
+            BooksAPI.search(str).then((result) => {
+                if (result.error === "empty query") {
+                    this.setState({ data: [] })
+                } else {
+                    this.setState({ data: result })
+                }
+
+            })
+        } else {
+            this.setState({ data: [] })
+>>>>>>> Search
         }
     }
 
@@ -55,6 +69,7 @@ class AddBook extends React.Component {
                                                 <div className="book">
                                                     <div className="book-top">
                                                         <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }} />
+<<<<<<< HEAD
                                                         <div className="book-shelf-changer">                                            
                                                                 <select defaultValue={this.funcaoShelf(book)}>
                                                                 <option value="move" disabled>Move to...</option>
@@ -63,6 +78,12 @@ class AddBook extends React.Component {
                                                                 <option value="read">Read</option>
                                                                 <option value="none">None</option>
                                                             </select>
+=======
+                                                        <div className="book-shelf-changer">
+                                                            <ButtonChange shelf={book.shelf}
+                                                                infoLivro={book}
+                                                                changeBook={this.props.changeBook} />
+>>>>>>> Search
                                                         </div>
                                                     </div>
                                                     <div className="book-title">{book.title}</div>
