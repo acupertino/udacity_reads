@@ -27,6 +27,7 @@ class AddBook extends React.Component {
 
     funcaoShelf = (book) => {
         if(book.shelf == null){
+
             var x = "none"
             return x
         }
