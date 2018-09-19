@@ -10,7 +10,11 @@ class ButtonChange extends React.Component {
     }            
     change(event) {
         if(this.props.infoLivro.shelf == null){
-            console.log('okar')
+            var n1 = [{"shelf" : "null"}]
+            var n2 = this.props.infoLivro
+            var n3 = []
+            n3 = n3.concat(n2, n1)
+            console.log(n3)
         }else{
         this.props.changeBook(this.props.infoLivro, event.target.value)
         }
