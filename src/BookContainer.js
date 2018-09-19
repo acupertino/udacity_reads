@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 
 class BookContainer extends Component {
   render() {
-    console.log('Tamanho: ', this.props.stateLenght())
     return (
       <div className="list-books">
         <div className="list-books-title"><h1>MyReads</h1></div>
@@ -25,7 +24,7 @@ class BookContainer extends Component {
                               infoLivro={book}
                               changeBook={this.props.changeBook} 
                               dados={this.props.dados}
-                              stateLenght={this.props.stateLenght} />
+                              funcaoCompare={this.funcaoCompare}  />
                           </div>
                         </div>
                         <div className="book-title">{book.title}</div>
@@ -52,7 +51,7 @@ class BookContainer extends Component {
                               infoLivro={book}
                               changeBook={this.props.changeBook} 
                               dados={this.props.dados}
-                              stateLenght={this.props.stateLenght} />
+                              funcaoCompare={this.funcaoCompare}  />
                           </div>
                         </div>
                         <div className="book-title">{book.title}</div>
@@ -79,7 +78,7 @@ class BookContainer extends Component {
                               infoLivro={book}
                               changeBook={this.props.changeBook}
                               dados={this.props.dados}
-                              stateLenght={this.props.stateLenght} />
+                              funcaoCompare={this.funcaoCompare}  />
                           </div>
                         </div>
                         <div className="book-title">{book.title}</div>

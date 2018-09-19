@@ -12,7 +12,7 @@ class AddBook extends React.Component {
 
     updateQuery = (query) => {
         str = query
-        if (str != "") {
+        if (str !== "") {
             BooksAPI.search(str).then((result) => {
                 if (result.error === "empty query") {
                     this.setState({ data: [] })
@@ -49,11 +49,10 @@ class AddBook extends React.Component {
                                                     <div className="book-top">
                                                         <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }} />
                                                         <div className="book-shelf-changer">
-                                                            <ButtonChange shelf={book.shelf}
-                                                                infoLivro={book}
+                                                            <ButtonChange infoLivro={book}
                                                                 changeBook={this.props.changeBook}
                                                                 dados={this.props.dados}
-                                                                stateLenght={this.props.stateLenght}/>
+                                                                funcaoCompare={this.funcaoCompare} />
                                                         </div>
                                                     </div>
                                                     <div className="book-title">{book.title}</div>

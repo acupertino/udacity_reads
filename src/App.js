@@ -17,30 +17,30 @@ class App extends React.Component {
     })
   }
 
-  stateLenght = () => {
-    var n1 = this.state.dados.filter(book => book.shelf === 'currentlyReading').length
-    var n3 = this.state.dados.filter(book => book.shelf === 'wantToRead').length
-    var n2 = this.state.dados.filter(book => book.shelf === 'read').length
-    return n1+n2+n3
+  funcaoCompare = () => {
+    
   }
 
   changeBook = (book, newShelf) => {
-    if (newShelf === "none") {
-      this
-      book.shelf = newShelf
-      BooksAPI.update(book, newShelf).then(book => {
+    var i = 0
+    var x = 0
+    for (i = 0; i < this.state.dados.length; i++) {if (this.state.dados[i].id === book.id) {x=1}}
+    if(x===1){  //trocar de prateleira
+        book.shelf = newShelf
+        BooksAPI.update(book, newShelf).then(book => {
         this.setState(state => ({
-          book: state.dados.concat([book])
+        book: state.dados.concat([book])
         }))
       })
-    } else {
-      book.shelf = newShelf
-      BooksAPI.update(book, newShelf).then(book => {
+    }else{
+        book.shelf = newShelf
+        BooksAPI.update(book, newShelf).then(book => {
         this.setState(state => ({
-          book: state.dados.concat([book])
+        book: state.dados.concat([book])
         }))
-      })
-    }
+        //FALTA SO ATUALIZAR A PAGINA, APARENTEMENTE
+    })
+    }  
   }
 
 
@@ -50,13 +50,12 @@ class App extends React.Component {
         <Route exact path="/" render={() => (
           <BookContainer dados={this.state.dados}
             changeBook={this.changeBook}
-            stateLenght={this.stateLenght} />
+            funcaoCompare={this.funcaoCompare}/>
         )} />
         <Route path="/AddBooks" render={() => (
           <AddBook dados={this.state.dados}
             changeBook={this.changeBook}
-            dados={this.state.dados}
-            stateLenght={this.stateLenght} />
+            funcaoCompare={this.funcaoCompare}/>
         )} />
       </div>
 
