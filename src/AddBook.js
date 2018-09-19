@@ -22,7 +22,6 @@ class AddBook extends React.Component {
                 } else {
                     this.setState({ data: result })
                 }
-
             })
         } else {
             this.setState({ data: [] })
