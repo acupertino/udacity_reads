@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 class BookContainer extends Component {
   render() {
-    console.log('Props', this.props)
+    console.log('Tamanho: ', this.props.stateLenght())
     return (
       <div className="list-books">
         <div className="list-books-title"><h1>MyReads</h1></div>
@@ -23,7 +23,9 @@ class BookContainer extends Component {
                           <div className="book-shelf-changer">
                             <ButtonChange shelf={book.shelf}
                               infoLivro={book}
-                              changeBook={this.props.changeBook} />
+                              changeBook={this.props.changeBook} 
+                              dados={this.props.dados}
+                              stateLenght={this.props.stateLenght} />
                           </div>
                         </div>
                         <div className="book-title">{book.title}</div>
@@ -48,7 +50,9 @@ class BookContainer extends Component {
                           <div className="book-shelf-changer">
                             <ButtonChange shelf={book.shelf}
                               infoLivro={book}
-                              changeBook={this.props.changeBook} />
+                              changeBook={this.props.changeBook} 
+                              dados={this.props.dados}
+                              stateLenght={this.props.stateLenght} />
                           </div>
                         </div>
                         <div className="book-title">{book.title}</div>
@@ -73,7 +77,9 @@ class BookContainer extends Component {
                           <div className="book-shelf-changer">
                             <ButtonChange shelf={book.shelf}
                               infoLivro={book}
-                              changeBook={this.props.changeBook} />
+                              changeBook={this.props.changeBook}
+                              dados={this.props.dados}
+                              stateLenght={this.props.stateLenght} />
                           </div>
                         </div>
                         <div className="book-title">{book.title}</div>

@@ -6,12 +6,10 @@ import * as BooksAPI from './BooksAPI'
 import AddBook from './AddBook';
 
 class App extends React.Component {
-  
-    state = { 
-      dados : []
+
+  state = {
+    dados: []
   }
-
-
 
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
@@ -19,29 +17,46 @@ class App extends React.Component {
     })
   }
 
-  changeBook = (book, newShelf) => {
-    var i=0;
-    {for (i=0;i<this.state.dados.length;i++){
-      this.state.dados[i].id === book.id && (this.state.dados[i].shelf = newShelf)
-    }
-    BooksAPI.update(book, newShelf).then(book => {
-      this.setState(state => ({
-        book : state.dados.concat([ book ])
-      }))
-    })
+  stateLenght = () => {
+    var n1 = this.state.dados.filter(book => book.shelf === 'currentlyReading').length
+    var n3 = this.state.dados.filter(book => book.shelf === 'wantToRead').length
+    var n2 = this.state.dados.filter(book => book.shelf === 'read').length
+    return n1+n2+n3
   }
-}
-  
+
+  changeBook = (book, newShelf) => {
+    if (newShelf === "none") {
+      this
+      book.shelf = newShelf
+      BooksAPI.update(book, newShelf).then(book => {
+        this.setState(state => ({
+          book: state.dados.concat([book])
+        }))
+      })
+    } else {
+      book.shelf = newShelf
+      BooksAPI.update(book, newShelf).then(book => {
+        this.setState(state => ({
+          book: state.dados.concat([book])
+        }))
+      })
+    }
+  }
+
+
   render() {
     return (
       <div>
         <Route exact path="/" render={() => (
           <BookContainer dados={this.state.dados}
-                         changeBook={this.changeBook} />
+            changeBook={this.changeBook}
+            stateLenght={this.stateLenght} />
         )} />
         <Route path="/AddBooks" render={() => (
           <AddBook dados={this.state.dados}
-                   changeBook={this.changeBook} />
+            changeBook={this.changeBook}
+            dados={this.state.dados}
+            stateLenght={this.stateLenght} />
         )} />
       </div>
 
