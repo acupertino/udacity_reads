@@ -60,7 +60,7 @@ class App extends React.Component {
             changeBook={this.changeBook}
             funcaoCompare={this.funcaoCompare}/>
         )} />
-        <Route path="/AddBooks" render={() => (
+        <Route path="/asd" render={() => (
           <AddBook dados={this.state.dados}
             changeBook={this.changeBook}
             funcaoCompare={this.funcaoCompare}/>
