@@ -11,14 +11,22 @@ class App extends React.Component {
     dados: []
   }
 
-  componentDidMount() {
-    BooksAPI.getAll().then((books) => {
-      this.setState({ dados: books })
-    })
-  }
+    componentDidMount() {
+      BooksAPI.getAll().then((books) => {
+        this.setState({ dados: books })
+      })
+    }
 
-  funcaoCompare = () => {
-    
+    funcaoCompare = (book) => { //0 para não pertencente, != 0 para pertencente (numero = indice)    
+       var i = 0
+      var x = 0  
+      for(i=0;i<this.state.dados.length;i++){
+        if(book.id === this.state.dados[i].id){
+          book.shelf = this.state.dados[i].shelf
+          return book.shelf
+        }
+      }
+      return x
   }
 
   changeBook = (book, newShelf) => {
@@ -37,7 +45,7 @@ class App extends React.Component {
         BooksAPI.update(book, newShelf).then(book => {
         this.setState(state => ({
         book: state.dados.concat([book])
-        }))
+      }))
         //FALTA SO ATUALIZAR A PAGINA, APARENTEMENTE
     })
     }  

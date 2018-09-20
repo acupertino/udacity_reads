@@ -22,9 +22,8 @@ class BookContainer extends Component {
                           <div className="book-shelf-changer">
                             <ButtonChange shelf={book.shelf}
                               infoLivro={book}
-                              changeBook={this.props.changeBook} 
-                              dados={this.props.dados}
-                              funcaoCompare={this.funcaoCompare}  />
+                              changeBook={this.props.changeBook}
+                              funcaoCompare={this.props.funcaoCompare}/>
                           </div>
                         </div>
                         <div className="book-title">{book.title}</div>
@@ -49,9 +48,8 @@ class BookContainer extends Component {
                           <div className="book-shelf-changer">
                             <ButtonChange shelf={book.shelf}
                               infoLivro={book}
-                              changeBook={this.props.changeBook} 
-                              dados={this.props.dados}
-                              funcaoCompare={this.funcaoCompare}  />
+                              changeBook={this.props.changeBook}
+                              funcaoCompare={this.props.funcaoCompare}/>
                           </div>
                         </div>
                         <div className="book-title">{book.title}</div>
@@ -77,8 +75,7 @@ class BookContainer extends Component {
                             <ButtonChange shelf={book.shelf}
                               infoLivro={book}
                               changeBook={this.props.changeBook}
-                              dados={this.props.dados}
-                              funcaoCompare={this.funcaoCompare}  />
+                              funcaoCompare={this.props.funcaoCompare}/>
                           </div>
                         </div>
                         <div className="book-title">{book.title}</div>

@@ -51,8 +51,7 @@ class AddBook extends React.Component {
                                                         <div className="book-shelf-changer">
                                                             <ButtonChange infoLivro={book}
                                                                 changeBook={this.props.changeBook}
-                                                                dados={this.props.dados}
-                                                                funcaoCompare={this.funcaoCompare} />
+                                                                funcaoCompare={this.props.funcaoCompare} />
                                                         </div>
                                                     </div>
                                                     <div className="book-title">{book.title}</div>
