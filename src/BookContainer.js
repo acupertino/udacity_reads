@@ -3,7 +3,21 @@ import ButtonChange from './ButtonChange';
 import './App.css';
 import { Link } from 'react-router-dom'
 
+
+
 class BookContainer extends Component {
+funcaThumb = (book) => {
+  if(book.imageLinks == null){
+    return null
+ }else{ return `url(${book.imageLinks.smallThumbnail})`}
+}
+
+ funcaAuthors = (book) =>{
+   if(book.authors == null){
+       return null
+    }else{ return book.authors}
+}
+
   render() {
     return (
       <div className="list-books">
@@ -18,7 +32,7 @@ class BookContainer extends Component {
                     <li key={book.id}>
                       <div className="book">
                         <div className="book-top">
-                          <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }} />
+                        <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: this.funcaThumb(book) }} />
                           <div className="book-shelf-changer">
                             <ButtonChange shelf={book.shelf}
                               infoLivro={book}
@@ -27,7 +41,7 @@ class BookContainer extends Component {
                           </div>
                         </div>
                         <div className="book-title">{book.title}</div>
-                        <div className="book-authors">{book.authors}</div>
+                        <div className="book-authors">{this.funcaAuthors(book)}</div>
                       </div>
                     </li>
                   ))}
@@ -44,7 +58,7 @@ class BookContainer extends Component {
                     <li key={book.id}>
                       <div className="book">
                         <div className="book-top">
-                          <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }} />
+                        <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: this.funcaThumb(book) }} />
                           <div className="book-shelf-changer">
                             <ButtonChange shelf={book.shelf}
                               infoLivro={book}
@@ -53,7 +67,7 @@ class BookContainer extends Component {
                           </div>
                         </div>
                         <div className="book-title">{book.title}</div>
-                        <div className="book-authors">{book.authors}</div>
+                        <div className="book-authors">{this.funcaAuthors(book)}</div>
                       </div>
                     </li>
                   ))}
@@ -70,7 +84,7 @@ class BookContainer extends Component {
                     <li key={book.id}>
                       <div className="book">
                         <div className="book-top">
-                          <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }} />
+                         <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: this.funcaThumb(book) }} /> 
                           <div className="book-shelf-changer">
                             <ButtonChange shelf={book.shelf}
                               infoLivro={book}
@@ -79,9 +93,8 @@ class BookContainer extends Component {
                           </div>
                         </div>
                         <div className="book-title">{book.title}</div>
-                        <div className="book-authors">{book.authors}
+                        <div className="book-authors">{this.funcaAuthors(book)}</div>
                         </div>
-                      </div>
                     </li>
                   ))}
                 </ol>
@@ -90,7 +103,7 @@ class BookContainer extends Component {
           </div>
         </div>        
         <div className="open-search a">
-          <Link to="/AddBooks" dados ={this.props.dados}> </Link>
+          <Link to="/search" dados ={this.props.dados}> </Link>
         </div>
       </div>
     )

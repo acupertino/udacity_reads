@@ -25,11 +25,24 @@ class AddBook extends React.Component {
         }
     }
 
+    funcaThumb = (book) => {
+       if(book.imageLinks == null){
+         return null
+      }else{ return `url(${book.imageLinks.smallThumbnail})`}
+    }
+
+      funcaAuthors = (book) =>{
+        if(book.authors == null){
+            return null
+         }else{ return book.authors}
+    }
+      
+
     render() {
         return (
             <div>
                 <div className="search-books-bar">
-                    <div><Link to="/" className="close-search"></Link></div>
+                    <div><Link to="/" className="close-search" ></Link></div>
                     <input
                         type="text"
                         placeholder="Search by title or author"
@@ -47,7 +60,7 @@ class AddBook extends React.Component {
                                             <li key={book.id}>
                                                 <div className="book">
                                                     <div className="book-top">
-                                                        <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }} />
+                                                    <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: this.funcaThumb(book) }} />
                                                         <div className="book-shelf-changer">
                                                             <ButtonChange infoLivro={book}
                                                                 changeBook={this.props.changeBook}
@@ -55,7 +68,7 @@ class AddBook extends React.Component {
                                                         </div>
                                                     </div>
                                                     <div className="book-title">{book.title}</div>
-                                                    <div className="book-authors">{book.authors}</div>
+                                                    <div className="book-authors">{this.funcaAuthors(book)}</div>
                                                 </div>
                                             </li>
                                         ))}
