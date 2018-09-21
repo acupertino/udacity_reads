@@ -8,10 +8,11 @@ class ButtonChange extends React.Component {
         this.change = this.change.bind(this);
     }
     change(event) {
-        this.props.changeBook(this.props.infoLivro, event.target.value)
+        this.props.changeBook(this.props.infoLivro, event.target.value, this.props.id)
         
     }
     selectValue = (book) => {
+        
         if(this.props.funcaoCompare(book) === 0){//não pertence
             return "none"
         }else{//pertence

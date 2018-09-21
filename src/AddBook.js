@@ -9,7 +9,7 @@ class AddBook extends React.Component {
     state = {
         data: []
     }
-
+    
     updateQuery = (query) => {
         str = query
         if (str !== "") {
@@ -24,21 +24,22 @@ class AddBook extends React.Component {
             this.setState({ data: [] })
         }
     }
-
+    
     funcaThumb = (book) => {
-       if(book.imageLinks == null){
-         return null
-      }else{ return `url(${book.imageLinks.smallThumbnail})`}
+        if(book.imageLinks == null){
+            return null
+        }else{ return `url(${book.imageLinks.smallThumbnail})`}
     }
-
-      funcaAuthors = (book) =>{
+    
+    funcaAuthors = (book) =>{
         if(book.authors == null){
             return null
-         }else{ return book.authors}
+        }else{ return book.authors}
     }
-      
-
+    
+    
     render() {
+        const id = 2
         return (
             <div>
                 <div className="search-books-bar">
@@ -63,8 +64,9 @@ class AddBook extends React.Component {
                                                     <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: this.funcaThumb(book) }} />
                                                         <div className="book-shelf-changer">
                                                             <ButtonChange infoLivro={book}
+                                                                id = {id}
                                                                 changeBook={this.props.changeBook}
-                                                                funcaoCompare={this.props.funcaoCompare} />
+                                                                funcaoCompare={this.props.funcaoCompare}/>
                                                         </div>
                                                     </div>
                                                     <div className="book-title">{book.title}</div>
