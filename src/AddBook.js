@@ -39,7 +39,6 @@ class AddBook extends React.Component {
     
     
     render() {
-        const id = 2
         return (
             <div>
                 <div className="search-books-bar">
@@ -64,7 +63,6 @@ class AddBook extends React.Component {
                                                     <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: this.funcaThumb(book) }} />
                                                         <div className="book-shelf-changer">
                                                             <ButtonChange infoLivro={book}
-                                                                id = {id}
                                                                 changeBook={this.props.changeBook}
                                                                 funcaoCompare={this.props.funcaoCompare}/>
                                                         </div>

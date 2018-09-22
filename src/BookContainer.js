@@ -19,7 +19,6 @@ funcaThumb = (book) => {
 }
 
   render() {
-    const id = 1
     return (
       <div className="list-books">
         <div className="list-books-title"><h1>MyReads</h1></div>
@@ -38,8 +37,7 @@ funcaThumb = (book) => {
                             <ButtonChange shelf={book.shelf}
                               infoLivro={book}
                               changeBook={this.props.changeBook}
-                              funcaoCompare={this.props.funcaoCompare}
-                              id = {id}/>
+                              funcaoCompare={this.props.funcaoCompare}/>
                           </div>
                         </div>
                         <div className="book-title">{book.title}</div>
@@ -65,8 +63,7 @@ funcaThumb = (book) => {
                             <ButtonChange shelf={book.shelf}
                               infoLivro={book}
                               changeBook={this.props.changeBook}
-                              funcaoCompare={this.props.funcaoCompare}
-                              id = {id}/>
+                              funcaoCompare={this.props.funcaoCompare}/>
                           </div>
                         </div>
                         <div className="book-title">{book.title}</div>
@@ -92,8 +89,7 @@ funcaThumb = (book) => {
                             <ButtonChange shelf={book.shelf}
                               infoLivro={book}
                               changeBook={this.props.changeBook}
-                              funcaoCompare={this.props.funcaoCompare}
-                              id = {id}/>
+                              funcaoCompare={this.props.funcaoCompare}/>
                           </div>
                         </div>
                         <div className="book-title">{book.title}</div>
