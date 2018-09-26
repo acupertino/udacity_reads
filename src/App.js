@@ -7,43 +7,43 @@ import AddBook from './AddBook';
 
 class App extends React.Component {
   state = {
-    dados: []
+    data: []
   }
 
     componentDidMount() {
       BooksAPI.getAll().then((books) => {
-        this.setState({ dados: books })
+        this.setState({ data: books })
       })
     }
     funcaoCompare = (book) => { //0 para não pertencente, != 0 para pertencente (numero = indice)    
       var i = 0, x =0
-      for(i=0;i<this.state.dados.length;i++){
-        if(book.id === this.state.dados[i].id){
-          book.shelf = this.state.dados[i].shelf
+      for(i=0;i<this.state.data.length;i++){
+        if(book.id === this.state.data[i].id){
+          book.shelf = this.state.data[i].shelf
           return book.shelf
         }}return x
   }
 
   changeBook = (book, newShelf) => {
-      book.shelf = newShelf
-      BooksAPI.update(book, newShelf).then(y => {
-        this.setState(state => ({
-             dados: state.dados.filter((c) => c.id !== book.id).concat([book])
-        }))
-    })
-  }
+    const newBook = { ...book, shelf: newShelf}
+    BooksAPI.update(book, newShelf).then(() => {
+      this.setState(state => ({
+           data: state.data.filter((c) => c.id !== book.id).concat([newBook])
+      }))
+  })
+}
 
 
   render() {
     return (
       <div>
         <Route exact path="/" render={() => (
-          <BookContainer dados={this.state.dados}
+          <BookContainer data={this.state.data}
             changeBook={this.changeBook}
             funcaoCompare={this.funcaoCompare}/>
         )} />
         <Route path="/search" render={() => (
-          <AddBook dados={this.state.dados}
+          <AddBook data={this.state.data}
             changeBook={this.changeBook}
             funcaoCompare={this.funcaoCompare}/>
         )} />

@@ -3,17 +3,16 @@ import { Link } from 'react-router-dom'
 import './App.css';
 import * as BooksAPI from './BooksAPI'
 import ButtonChange from './ButtonChange'
+import {DebounceInput} from 'react-debounce-input';
 
-var str = ""
+
 class AddBook extends React.Component {
     state = {
         data: []
-    }
-    
-    updateQuery = (query) => {
-        str = query
-        if (str !== "") {
-            BooksAPI.search(str).then((result) => {
+    }    
+        updateQuery = (query) => {
+        if (query !== "") {
+            BooksAPI.search(query).then((result) => {
                 if (result.error === "empty query") {
                     this.setState({ data: [] })
                 } else {
@@ -24,6 +23,7 @@ class AddBook extends React.Component {
             this.setState({ data: [] })
         }
     }
+    
     
     funcaThumb = (book) => {
         if(book.imageLinks == null){
@@ -43,12 +43,12 @@ class AddBook extends React.Component {
             <div>
                 <div className="search-books-bar">
                     <div><Link to="/" className="close-search" ></Link></div>
-                    <input
+                    <DebounceInput
+                        debounceTimeout={200}
                         type="text"
                         placeholder="Search by title or author"
                         value={this.str}
-                        onChange={(event) => this.updateQuery(event.target.value)}>
-                    </input>
+                        onChange={(event) => this.updateQuery(event.target.value)}/>
                 </div>
                 <div className="search-books-results">
                     <div className="list-books-content">
