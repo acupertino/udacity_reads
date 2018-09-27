@@ -15,7 +15,7 @@ class App extends React.Component {
         this.setState({ data: books })
       })
     }
-    funcaoCompare = (book) => { //0 para não pertencente, != 0 para pertencente (numero = indice)    
+    funcaoCompare = (book) => { 
       var i = 0, x =0
       for(i=0;i<this.state.data.length;i++){
         if(book.id === this.state.data[i].id){
